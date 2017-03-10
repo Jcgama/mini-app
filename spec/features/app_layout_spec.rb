@@ -2,13 +2,15 @@ require 'rails_helper'
 
 describe "layout links"  do
     it "should have signup path" do
-       visit root_path
-       expect(page).to have_link(nil, href: 'new_user_registration_path')
+       visit '/'
+       if user_signed_in?
+            expect(page).to have_link('mini app', href: new_user_registration_path)
+       else
+           expect(page).to have_link('mini app', href: '/')
+       end
     end
     
-    it "should have home path" do
-       visit root_path
-       expect(page).to have_link(nil, href: 'root_path')
-    end
+    
+    
         
 end

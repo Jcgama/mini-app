@@ -1,0 +1,15 @@
+<% provide(:title, "Home") %>
+
+<h1>Seja bem-vindo</h1>
+
+
+<h2><%= link_to "Veja suas listas", list_show_path %></h2>
+
+
+<h2><%= link_to "Veja listas de outro usuário", 'show/1' %></h2>
+
+
+<%= form_tag(user_index_path, :method => "get", id: "search-form") do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Pesquise por usuários" %>
+    <%= submit_tag "Search", :name => nil %>
+<% end %>

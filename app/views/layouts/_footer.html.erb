@@ -1,0 +1,8 @@
+<div class="footer">
+    
+    <% if user_signed_in? %>
+      <strong>Logado como <%= current_user.email %></strong>.
+      <%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %>
+    <% end %>
+    
+</div>
